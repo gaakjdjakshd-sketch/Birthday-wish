@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Montafa Kamal Iqra 🎉</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+font-family: 'Quicksand', sans-serif;
+background:
+radial-gradient(circle at 15% 20%, rgba(255,255,255,0.95) 0 55px, transparent 56px),
+radial-gradient(circle at 85% 15%, rgba(255,255,255,0.75) 0 45px, transparent 46px),
+linear-gradient(-45deg, #dff8ff, #f7fdff, #d8f3f0, #eefaff);
+background-size: auto, auto, 400% 400%;
+animation: gradientBG 12s ease infinite;
+color: #29434e;
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+min-height: 100vh;
+overflow-x: hidden;
+}
+@keyframes gradientBG {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+.card {
+background: rgba(255, 255, 255, 0.95);
+backdrop-filter: blur(10px);
+border-radius: 24px;
+box-shadow: 0 15px 35px rgba(32, 168, 184, 0.22);
+width: 100%;
+max-width: 650px;
+padding: 40px 30px;
+margin-bottom: 25px;
+text-align: center;
+border: 4px solid #fff;
+animation: slideUp 0.8s ease-out;
+position: relative;
+}
+@keyframes slideUp {
+from { transform: translateY(30px); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
+}
+
+.dental-icon {
+  width: 76px;
+  height: 62px;
+  margin: 0 auto 10px;
+  color: #1597a6;
+  animation: toothFloat 3s ease-in-out infinite;
+}
+.dental-icon svg {
+  width: 100%;
+  height: 100%;
+}
+@keyframes toothFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.header-title {
+font-family: 'Fredoka One', cursive;
+color: #20a8b8;
+font-size: 2.8rem;
+margin-bottom: 5px;
+text-shadow: 2px 2px 0px #c8f3f5;
+animation: pulseTitle 2s ease-in-out infinite;
+}
+@keyframes pulseTitle {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.03); }
+}
+.subtitle {
+color: #58c9d3;
+font-size: 1.2rem;
+margin-bottom: 25px;
+font-weight: 700;
+}
+.name {
+background: linear-gradient(45deg, #20a8b8, #58c9d3);
+color: white;
+font-family: 'Fredoka One', cursive;
+font-size: 1.8rem;
+padding: 12px 28px;
+border-radius: 50px;
+display: inline-block;
+margin-bottom: 30px;
+box-shadow: 0 6px 18px rgba(32, 168, 184, 0.30);
+animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-8px); }
+}
+.page {
+display: none;
+animation: fadeIn 0.8s ease-in-out forwards;
+}
+.page.active { display: block; }
+@keyframes fadeIn {
+from { opacity: 0; transform: scale(0.95); }
+to { opacity: 1; transform: scale(1); }
+}
+.calendar-container {
+background: #fff;
+border: 2px solid #8bdfe5;
+border-radius: 20px;
+padding: 20px;
+margin: 20px 0;
+}
+.calendar-title {
+font-family: 'Fredoka One', cursive;
+color: #20a8b8;
+font-size: 1.4rem;
+margin-bottom: 15px;
+}
+.calendar-grid {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 8px;
+text-align: center;
+font-weight: bold;
+}
+.day-name { color: #58c9d3; font-size: 0.85rem; }
+.day-num {
+padding: 10px 0;
+border-radius: 10px;
+background: #fafafa;
+color: #666;
+font-size: 0.95rem;
+}
+.bday-highlight {
+background: #20a8b8 !important;
+color: white !important;
+font-weight: bold;
+box-shadow: 0 0 15px rgba(32, 168, 184, 0.65);
+animation: bdayGlow 1.2s ease-in-out infinite alternate;
+}
+@keyframes bdayGlow {
+from { transform: scale(1); box-shadow: 0 0 10px #20a8b8; }
+to { transform: scale(1.15); box-shadow: 0 0 22px #20a8b8; }
+}
+.btn-click-here {
+background: linear-gradient(45deg, #20a8b8, #58c9d3);
+color: #fff;
+font-family: 'Fredoka One', cursive;
+font-size: 1.3rem;
+border: none;
+padding: 16px 36px;
+border-radius: 50px;
+cursor: pointer;
+box-shadow: 0 8px 25px rgba(32, 168, 184, 0.38);
+margin: 20px 0;
+transition: all 0.3s ease;
+animation: bounceBtn 1.5s infinite;
+}
+@keyframes bounceBtn {
+0%, 100% { transform: translateY(0) scale(1); }
+50% { transform: translateY(-5px) scale(1.03); }
+}
+.btn-back {
+background: #e9fbfc;
+color: #20a8b8;
+font-family: 'Fredoka One', cursive;
+font-size: 0.95rem;
+border: 2px solid #58c9d3;
+padding: 8px 20px;
+border-radius: 30px;
+cursor: pointer;
+margin-bottom: 20px;
+transition: all 0.3s ease;
+}
+/* --- PAGE 3 VINTAGE PARCHMENT CARD STYLE --- */
+.vintage-card {
+background: #fbf5e8;
+border: 12px solid #800020;
+border-radius: 8px;
+padding: 30px 25px;
+position: relative;
+box-shadow: inset 0 0 20px rgba(128, 0, 32, 0.25), 0 10px 25px rgba(0,0,0,0.15);
+text-align: left;
+margin-top: 10px;
+background-image: radial-gradient(#eddcc4 1px, transparent 0);
+background-size: 12px 12px;
+}
+.vintage-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 25px;
+border-bottom: 2px dashed #b8860b;
+padding-bottom: 10px;
+}
+.vintage-title {
+font-family: 'Dancing Script', cursive;
+font-size: 2.3rem;
+color: #800020;
+font-weight: 700;
+}
+.ribbon-svg {
+width: 65px;
+height: 65px;
+filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.2));
+}
+.vintage-text {
+font-family: 'Quicksand', sans-serif;
+font-size: 1.05rem;
+line-height: 1.8;
+color: #4a2c2c;
+margin-bottom: 16px;
+font-weight: 600;
+}
+.vintage-footer {
+text-align: center;
+font-family: 'Dancing Script', cursive;
+font-size: 1.8rem;
+color: #800020;
+font-weight: bold;
+margin-top: 25px;
+padding-top: 15px;
+border-top: 1px solid #d4af37;
+}
+
+.dental-wish-card {
+  border-color: #1597a6;
+  background-color: #f7ffff;
+  background-image:
+    radial-gradient(circle at 12% 15%, rgba(21,151,166,0.08) 0 3px, transparent 4px),
+    radial-gradient(circle at 88% 82%, rgba(21,151,166,0.08) 0 3px, transparent 4px),
+    linear-gradient(135deg, rgba(255,255,255,0.95), rgba(232,250,252,0.95));
+}
+.dental-wish-card .vintage-header {
+  border-bottom-color: #8bdfe5;
+}
+.dental-wish-card .vintage-title,
+.dental-wish-card .vintage-footer {
+  color: #087f8c;
+}
+.dental-wish-card .vintage-text {
+  color: #36535b;
+}
+.dental-wish-card .vintage-footer {
+  border-top-color: #8bdfe5;
+}
+
+</style>
+</head>
+<body>
+<div class="card">
+<div id="page1" class="page active">
+<div class="dental-icon" aria-label="Dental theme">
+  <svg viewBox="0 0 120 90" role="img" aria-hidden="true">
+    <path d="M38 12 C24 10 15 22 18 39 C21 54 30 69 39 76 C44 80 47 72 49 62 L52 48 C53 43 57 43 58 48 L61 62 C63 72 66 80 71 76 C80 69 89 54 92 39 C95 22 86 10 72 12 C64 13 59 18 55 22 C51 18 46 13 38 12 Z"
+          fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M48 30 C52 26 58 26 62 30" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </svg>
+</div>
+<h1 class="header-title">Happy Birthday</h1>
+<div class="name">Montafa Kamal Iqra</div>
+<div>
+<button class="btn-click-here" onclick="goToPage(2)">👉 CLICK HERE 👈</button>
+</div>
+</div>
+
+<div id="page2" class="page">
+<button class="btn-back" onclick="goToPage(1)">⬅ Back</button>
+<div class="calendar-container">
+<div class="calendar-title">SEPTEMBER 2026</div>
+<div class="calendar-grid">
+<div class="day-name">SUN</div><div class="day-name">MON</div><div class="day-name">TUE</div><div class="day-name">WED</div><div class="day-name">THU</div><div class="day-name">FRI</div><div class="day-name">SAT</div>
+<div class="day-num"></div><div class="day-num"></div><div class="day-num">1</div><div class="day-num">2</div><div class="day-num">3</div><div class="day-num">4</div><div class="day-num">5</div>
+<div class="day-num">6</div><div class="day-num">7</div><div class="day-num">8</div><div class="day-num">9</div><div class="day-num">10</div><div class="day-num">11</div><div class="day-num">12</div>
+<div class="day-num">13</div><div class="day-num">14</div><div class="day-num">15</div><div class="day-num">16</div><div class="day-num">17</div><div class="day-num">18</div><div class="day-num">19</div>
+<div class="day-num">20</div><div class="day-num">21</div><div class="day-num">22</div><div class="day-num">23</div><div class="day-num">24</div><div class="day-num">25</div><div class="day-num">26</div>
+<div class="day-num">27</div><div class="day-num">28</div><div class="day-num bday-highlight">29</div><div class="day-num">30</div><div class="day-num"></div><div class="day-num"></div><div class="day-num"></div>
+</div>
+</div>
+<div>
+<button class="btn-click-here" onclick="goToPage(3)">👉 CLICK HERE FOR WISHES 👈</button>
+</div>
+</div>
+
+<div id="page3" class="page">
+<button class="btn-back" onclick="goToPage(2)">⬅ Back to Calendar</button>
+<div class="vintage-card dental-wish-card">
+<div class="vintage-header">
+<div class="vintage-title">Happy Birthday</div>
+<svg class="ribbon-svg" viewBox="0 0 120 100" aria-hidden="true">
+  <path d="M60 12 C45 10 32 20 34 36 C36 52 47 72 55 80 C59 84 61 77 63 66 L66 49 C67 44 73 44 74 49 L77 66 C79 77 81 84 85 80 C93 72 104 52 106 36 C108 20 95 10 80 12 C72 13 67 18 64 23 C61 18 68 13 60 12 Z"
+        fill="none" stroke="#1597a6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M55 35 C60 30 68 30 73 35" fill="none" stroke="#1597a6" stroke-width="4" stroke-linecap="round"/>
+</svg>
+</div>
+<div class="vintage-text">
+I wish you a very happy birthday filled with love, happiness, and beautiful moments. May this new year of your life bring you success, peace, and endless opportunities.
+</div>
+<div class="vintage-text">
+I hope you achieve all your dreams and goals and continue to make every moment of your life meaningful. May you always stay happy, healthy, and surrounded by the people who love and care for you.
+</div>
+<div class="vintage-text">
+Wishing you a truly wonderful birthday and a beautiful year ahead. ❤️🎉
+</div>
+<div class="vintage-footer">Wishing You A Beautiful Year Ahead!</div>
+</div>
+</div>
+</div>
+
+<script>
+function triggerConfetti() {
+confetti({
+particleCount: 120,
+spread: 80,
+origin: { y: 0.6 }
+});
+}
+function goToPage(pageNumber) {
+document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+document.getElementById('page' + pageNumber).classList.add('active');
+triggerConfetti();
+}
+</script>
+</body>
+</html>
